@@ -5,15 +5,17 @@ class ProductController extends Zend_Controller_Action
 
     public function init()
     {
-        /* Initialize action controller here */
-        die("ok");
+        /* Initialize action controller here */        
+        
     }
 
     public function indexAction()
     {
         // action body
+        $productModel = new Application_Model_Product();
+        $this->view->producten= $productModel->getAll();
     }
-
+    
     public function wijzigenAction()
     {
         // action body
