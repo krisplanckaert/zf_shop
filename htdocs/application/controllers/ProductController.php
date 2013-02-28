@@ -13,7 +13,7 @@ class ProductController extends Zend_Controller_Action
     {
         // action body
         $productModel = new Application_Model_Product();
-        $this->view->producten= $productModel->getAll();
+        $this->view->producten= $productModel->getAll()->toArray();
     }
     
     public function wijzigenAction()

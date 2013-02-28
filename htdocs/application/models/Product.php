@@ -3,13 +3,13 @@ class Application_Model_Product extends Zend_Db_Table_Abstract
 {
     //defini‘ren hoe de tabel eruit ziet
     
-    protected $_name = 'nieuws';
+    protected $_name = 'producten';
     protected $_primary = 'id';
     
     
-    public function getAllNieuws()
+    public function getAll()
     {
-        $this->fetchAll(); // select * from nieuws                        
+        return $this->fetchAll(); // select * from nieuws                        
     }
     
     public function toevoegenProduct($params) 
