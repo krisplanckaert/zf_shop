@@ -23,7 +23,7 @@ class ProductController extends Zend_Controller_Action
         $productModel = new Application_Model_Product();
         $product = $productModel->find($id)->current(); 
                
-        $form = new Application_Form_Product();
+        $form = new Application_Form_Product($id);
         $form->populate($product->toArray());
                 
         $this->view->form = $form;
@@ -67,7 +67,10 @@ class ProductController extends Zend_Controller_Action
 
     public function verwijderenAction()
     {
-        // action body
+        $id = (int) $this->_getParam('id'); 
+        $productModel = new Application_Model_Product();
+        $productModel->verwijderProduct($id);
+        $this->_redirect($this->view->url(array('controller'=> 'Product', 'action'=> 'index')));
     }
 
 

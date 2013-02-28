@@ -5,8 +5,8 @@
     <li><a href="/product/toevoegen">Toevoegen</a></li>    
 </ul>
 <?php foreach ($this->producten as $product) {
-    echo  "<p>".$product['naam']. "<a href='/product/wijzigen/id/" . $product['id']. "'>Wijzig</a></p>";
-   // echo  $nieuws['omschrijving'];
+    echo  "<p>".$product['naam']. " <a href='/product/wijzigen/id/" . $product['id']. "'>Wijzig</a>"." ";
+    echo  "<a href='/product/verwijderen/id/" . $product['id']. "'>Verwijder</a>"."</p>";
     echo  '<hr/>';
 }
 
