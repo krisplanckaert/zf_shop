@@ -2,7 +2,7 @@
 class Application_Model_Product extends Zend_Db_Table_Abstract
 {
     //definieren hoe de tabel eruit ziet    
-    protected $_name = 'producten';
+    protected $_name = 'winkelmanden';
     protected $_primary = 'id';
     
     
