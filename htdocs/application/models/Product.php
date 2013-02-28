@@ -1,8 +1,7 @@
 <?php
 class Application_Model_Product extends Zend_Db_Table_Abstract
 {
-    //defini‘ren hoe de tabel eruit ziet
-    
+    //defini‘ren hoe de tabel eruit ziet    
     protected $_name = 'producten';
     protected $_primary = 'id';
     
@@ -14,7 +13,6 @@ class Application_Model_Product extends Zend_Db_Table_Abstract
     
     public function toevoegenProduct($params) 
     {
-        // $params = array('titel'=> 'lipsum', 'omschrijving' => 'bla bla');
         $this->insert($params);        
         
     }

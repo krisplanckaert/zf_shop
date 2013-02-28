@@ -1,6 +1,6 @@
 <?php
 
-class Application_Form_Login extends Zend_Form {
+class Application_Form_Product extends Zend_Form {
    
     public function init(){
         // set the defaults
@@ -16,18 +16,10 @@ class Application_Form_Login extends Zend_Form {
             'filters' => array('StringTrim')
             )));
         
-        // element wachtwoord
-        $this->addElement(new Zend_Form_Element_Text('wachtwoord',array(
-            'label'=>"Wachtwoord",
-            'required'=>true,
-            // filters
-            'filters' => array('StringTrim')
-            )));
-        
          // element button
-        $this->addElement(new Zend_Form_Element_Button('inloggen', array(
+        $this->addElement(new Zend_Form_Element_Button('toevoegen', array(
             'type'=>"submit",
-            'value'=>'login',
+            'value'=>'Toevoegen',
             'required'=> false,
             'ignore'=> true
             )));

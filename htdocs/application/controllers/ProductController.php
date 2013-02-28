@@ -18,12 +18,51 @@ class ProductController extends Zend_Controller_Action
     
     public function wijzigenAction()
     {
-        // action body
+        $id = (int) $this->_getParam('id'); //$_GET['id];
+                
+        $productModel = new Application_Model_Product();
+        $product = $productModel->find($id)->current(); 
+               
+        $form = new Application_Form_Product();
+        $form->populate($product->toArray());
+                
+        $this->view->form = $form;
+        
+        if ($this->getRequest()->isPost()){
+            $postParams= $this->getRequest()->getPost();
+            /*Zend_Debug::dump($postParams);
+            die("ok");*/            
+            if ($this->view->form->isValid($postParams)) {                                                           
+                  
+                unset($postParams['toevoegen']);
+                $productModel->wijzigenProduct($postParams, $id);
+                
+                /*$this->_redirect('/product/index');*/
+                
+                $this->_redirect($this->view->url(array('controller'=> 'Product', 'action'=> 'index')));
+            }  
+            
+        }
+        
     }
 
     public function toevoegenAction()
     {
-        // action body
+        $form  = new Application_Form_Product;
+        $this->view->form = $form;    
+        
+        if ($this->getRequest()->isPost()){
+            $postParams= $this->getRequest()->getPost();
+            
+            if ($this->view->form->isValid($postParams)) {                                            
+                
+                unset($postParams['toevoegen']);
+                $productModel = new Application_Model_Product();
+                $productModel->toevoegenProduct($postParams);
+                
+                $this->_redirect($this->view->url(array('controller'=> 'Product', 'action'=> 'index')));
+            }            
+        }
     }
 
     public function verwijderenAction()
