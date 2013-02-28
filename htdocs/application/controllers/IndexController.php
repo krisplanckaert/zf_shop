@@ -10,11 +10,10 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        //die('test');
-        $this->view->loginForm = new Application_Form_Login();
-        
         $productModel = new Application_Model_Product();
-        $this->view->product = $productModel->fetchAll();
+        $this->view->producten = $productModel->getAll();
+        
+        //Zend_Debug::dump($this->view->producten);exit;
     }
 
 

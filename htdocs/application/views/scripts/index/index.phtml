@@ -1,2 +1,8 @@
-<span><?php echo $this->loginForm;?></span>
-
+<?php 
+foreach($this->producten as $product) { ?>
+    <div style="float:left;border:1px solid black;padding:50px;">
+        <span><?php echo $product['naam'];?></span><br>
+        <span><?php echo 'prijs : '.$product['prijs'];?></span><br>
+        <button id="btn_kopen">Koop</button>
+    </div>
+<?php } ?>

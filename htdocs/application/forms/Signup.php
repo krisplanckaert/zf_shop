@@ -1,6 +1,6 @@
 <?php
 
-class Application_Form_Login extends Zend_Form {
+class Application_Form_Signup extends Zend_Form {
    
     public function init(){
         // set the defaults
@@ -28,7 +28,7 @@ class Application_Form_Login extends Zend_Form {
         $this->addElement(new Zend_Form_Element_Button('inloggen', array(
             'type'=>"submit",
             'value'=>'login',
-            'required'=> 'false',
+            'required'=> false,
             'ignore'=> true
             )));
         
