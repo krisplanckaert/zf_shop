@@ -1,7 +1,7 @@
 .DS_Store
 /htdocs/libraries
 /htdocs/library
-<<<<<<< HEAD
+.vagrant
 /htdocs/nbproject/private/
 .vagrant.dist
 .zfproject.xml
