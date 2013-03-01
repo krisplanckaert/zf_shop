@@ -1,0 +1,19 @@
+body{background:#FFD400;}
+
+ul{list-style-type: none;}
+
+
+#container{margin:auto;max-width:1000px;width:100%;border:1px dotted black;}
+
+header #logo{float:left;width:500px;border:1px solid black;}
+header #login{float:right;}
+
+section#content{float:left;width:1000px;}
+
+section#content li{display:inline-block;border:1px solid red;margin-left:20px;}
+section#content li:first-child{margin-left:0;}
+footer{float:left;width:1000px;background:#000;color:white;}
+
+.clear{clear:both;}
+/* Hide */
+.hidden{display:none;}

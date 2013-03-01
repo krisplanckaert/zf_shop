@@ -1,4 +1,28 @@
-<img src="/images/w3schools.gif"><br>
-<span style="float:right"><?php echo $this->signupForm($this->signupForm); ?></span>
-
-<?php echo $this->layout()->content; ?>
+<html>
+    <head>
+        <title>ZF Shop</title>
+        <link href="/css/style.css" rel="stylesheet" />
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <div id="logo">
+                    <h1 class="hidden">Logo</h1>
+                    <figure>
+                        <img src="/images/w3schools.gif">
+                    </figure>
+                </div>
+                <div id="login">
+                    <span style="float:right"><?php echo $this->signupForm($this->signupForm); ?></span>
+                </div>
+            </header>
+            <section id="content">
+                <?php echo $this->layout()->content; ?>
+            </section>
+            
+            <footer>Footer</footer>
+            <br class="clear" />
+        </div>
+    </body>
+</html>
