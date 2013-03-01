@@ -1,4 +1,12 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Product</b> and script/action name <b>index</b></p>
-</div>
+
+<h1>Producten overzicht</h1>
+
+<ul>
+    <li><a href="/product/toevoegen">Toevoegen</a></li>    
+</ul>
+<?php foreach ($this->producten as $product) {
+    echo  "<p>".$product['naam']. " <a href='/product/wijzigen/id/" . $product['id']. "'>Wijzig</a>"." ";
+    echo  "<a href='/product/verwijderen/id/" . $product['id']. "'>Verwijder</a>"."</p>";
+    echo  '<hr/>';
+}
+
