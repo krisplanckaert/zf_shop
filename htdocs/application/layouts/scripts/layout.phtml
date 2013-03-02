@@ -1,28 +1,36 @@
+<!doctype html>
 <html>
     <head>
         <title>ZF Shop</title>
         <link href="/css/style.css" rel="stylesheet" />
         <meta charset="UTF-8" />
     </head>
-    <body>
-        <div id="container">
-            <header>
-                <div id="logo">
-                    <h1 class="hidden">Logo</h1>
-                    <figure>
-                        <img src="/images/w3schools.gif">
-                    </figure>
-                </div>
-                <div id="login">
-                    <span style="float:right"><?php echo $this->signupForm($this->signupForm); ?></span>
-                </div>
-            </header>
-            <section id="content">
-                <?php echo $this->layout()->content; ?>
-            </section>
-            
-            <footer>Footer</footer>
-            <br class="clear" />
-        </div>
+    <body class="normalpage">
+        <section id="page">
+            <div id="bodywrap">
+                <section id="top">
+                    <nav>
+                        <h1 id="sitename">
+                            <a href="#">Portfolio | Premium CSS Template </a>
+                        </h1>
+                    </nav>
+                </section>
+                <section id="container">
+                    <div id="contents">
+                        <header>
+                            <div id="login">
+                                <span style="float:right"><?php echo $this->signupForm($this->signupForm); ?></span>
+                            </div>
+                        </header>
+                        <section id="content">
+                            <?php echo $this->layout()->content; ?>
+                        </section>
+
+                        <footer>Footer</footer>
+                        <br class="clear" />
+                    </div>
+                </section>
+            </div>
+        </section>
     </body>
 </html>
