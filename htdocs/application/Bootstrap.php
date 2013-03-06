@@ -9,5 +9,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $signup = Zend_Controller_Action_HelperBroker::getStaticHelper('Signup');
         Zend_Controller_Action_HelperBroker::addHelper($signup);
     }
+    
+    public function _initNavigation() {
+        // registreer de navigation plugin
+        $this->bootstrap('frontController');
+        $front = $this->getResource('frontController');
+        $front->registerPlugin(new Syntra_Controller_Plugin_Navigation());
+    }
 }
 
