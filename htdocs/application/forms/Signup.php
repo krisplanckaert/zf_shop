@@ -7,6 +7,7 @@ class Application_Form_Signup extends Zend_Form {
         $this->setMethod(Zend_Form::METHOD_POST);
         //$this->setAttrib('enctype', 'multiparts/form-data');
         $this->setAttrib('enctype', Zend_Form::ENCTYPE_MULTIPART);
+        $this->setAction('/gebruiker/login');
         
         // element naam
         $this->addElement(new Zend_Form_Element_Text('naam',array(
