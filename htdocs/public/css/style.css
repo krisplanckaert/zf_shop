@@ -3,8 +3,13 @@ body{background:#FFD400;background: url("/images/htmlbg.jpg") repeat-x scroll le
 body.normalpage {background:url(/images/normalhtml.jpg) left top repeat-x;}
 body.normalpage #page {background:url(/images/normalheader.jpg) center top no-repeat; height:245px;}
 
-ul{list-style-type: none;}
-
+ul{list-style-type: none;padding:18px 250px;}
+ul li {
+    display : inline-block;    
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 162.5%;
+    padding:0px 20px;
+}
 #page {width:100%; height:120px; background: url(/images/headerbg.jpg) center top no-repeat; margin: 0; padding: 0;}
 body #page {background:url(/images/normalheader.jpg) center top no-repeat; }
 
