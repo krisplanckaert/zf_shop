@@ -10,6 +10,7 @@ ul li {
     font-size: 162.5%;
     padding:0px 20px;
 }
+
 #page {width:100%; height:120px; background: url(/images/headerbg.jpg) center top no-repeat; margin: 0; padding: 0;}
 body #page {background:url(/images/normalheader.jpg) center top no-repeat; }
 
