@@ -5,6 +5,7 @@ class ErrorController extends Zend_Controller_Action
 
     public function errorAction()
     {
+        //die('error');
         $errors = $this->_getParam('error_handler');
         
         if (!$errors || !$errors instanceof ArrayObject) {

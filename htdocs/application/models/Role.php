@@ -1,21 +1,15 @@
 <?php
-class Application_Model_Winkelmand extends Zend_Db_Table_Abstract
+class Application_Model_Role extends Zend_Db_Table_Abstract
 {
-    private $db; 
-    
-    protected $_name = 'winkelmanden';
+    //definieren hoe de tabel eruit ziet    
+    protected $_name = 'roles';
     protected $_primary = 'id';
     
-    public function init()
-    {
-    	$this->db = $this->getAdapter();
-    }    
     
-    public function getAll($where=null,$order=null)
+    public function getAll()
     {
-   	$data = $this->fetchAll($where,$order);
-        return $data->toArray();
-    }    
+        return $this->fetchAll(); // select * from nieuws                        
+    }
     
     public function toevoegen($params) 
     {
@@ -47,17 +41,15 @@ class Application_Model_Winkelmand extends Zend_Db_Table_Abstract
         return $this->data;
     }
     
-    public function getOneByFields(array $fields,$operator = 'AND'){
-    	$where = '0 = 0'; 
-    	foreach($fields as $k=>$v){
-    		$where .= ' '. $operator . ' ' . $k . '=' . $this->db->quote($v);
-    	}
-        //die($where);
-    	$row = parent::fetchRow($where);            
-        if (!$row) {
-            return FALSE; 
+    public function getRolesList() {
+        $return = array();
+        $roles = $this->getAll()->toArray();
+        foreach($roles as $role) {
+            $return[$role['id']] = $role['role'];
         }
-        return $row->toArray();    	
-    }  
+        //Zend_Debug::dump($return);
+        return $return;
+    }
+    
 }
 ?>

@@ -31,7 +31,8 @@ class GebruikerController extends Zend_Controller_Action
                 //login uitvoeren
                 $result = $auth->authenticate($authAdapter);
                 if($result->isValid()) {
-                    echo 'U bent ingelogd!';
+                    $this->_redirect($this->view->url(array('controller'=> 'index', 'action'=> 'index')));
+                    //echo 'U bent ingelogd!';
                 } else {
                     //alle foutmeldingen weergeven op het scherm
                     foreach($result->getMessages() as $message) {
@@ -47,6 +48,7 @@ class GebruikerController extends Zend_Controller_Action
     {
         $auth = Zend_Auth::getInstance();
         $auth->clearIdentity();
+        $this->_redirect($this->view->url(array('controller'=> 'index', 'action'=> 'index')));
     }
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-class Application_Model_Gebruiker extends Zend_Db_Table_Abstract
+class Application_Model_Gebruiker extends My_Model
 {
 
     protected $_name = 'gebruikers';

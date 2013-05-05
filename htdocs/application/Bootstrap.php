@@ -8,16 +8,29 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $this->bootstrap('frontController');
         $signup = Zend_Controller_Action_HelperBroker::getStaticHelper('Signup');
         Zend_Controller_Action_HelperBroker::addHelper($signup);
+        
     }
 
     protected function _initRegisterControllerPlugins() 
     {
         //$this->bootstrap('frontController');        
         $front = $this->getResource('frontcontroller');
+        
+        //setup the layout
+        Zend_Layout::startMvc(array(
+            'layoutPath' => '../application/layouts/scripts',
+            'layout' => 'layout',
+        ));
+
         $front->registerPlugin(new Syntra_Controller_Plugin_Translate());        
         $front->registerPlugin(new Syntra_Controller_Plugin_Navigation());
         $front->registerPlugin(new Syntra_Auth_Acl());
         $front->registerPlugin(new Syntra_Auth_Auth());
+
+        $layoutModulePlugin = new Syntra_Controller_Plugin_Layout();
+        $layoutModulePlugin->registerModuleLayout('admin','../application/modules/admin/layouts/scripts','layout');
+        $front->registerPlugin($layoutModulePlugin);
+
     }    
     
     public function _initDbAdapter() 

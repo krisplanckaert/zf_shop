@@ -1,6 +1,6 @@
 <?php
 
-class ProductController extends Zend_Controller_Action
+class Admin_ProductController extends Zend_Controller_Action
 {
 
     public function init()
@@ -35,7 +35,7 @@ class ProductController extends Zend_Controller_Action
             if ($this->view->form->isValid($postParams)) {                                                           
                   
                 unset($postParams['toevoegen']);
-                $productModel->wijzigenProduct($postParams, $id);
+                $productModel->wijzigen($postParams, $id);
                 
                 /*$this->_redirect('/product/index');*/
                 
@@ -58,7 +58,7 @@ class ProductController extends Zend_Controller_Action
                 
                 unset($postParams['toevoegen']);
                 $productModel = new Application_Model_Product();
-                $productModel->toevoegenProduct($postParams);
+                $productModel->toevoegen($postParams);
                 
                 $this->_redirect($this->view->url(array('controller'=> 'Product', 'action'=> 'index')));
             }            
@@ -69,7 +69,7 @@ class ProductController extends Zend_Controller_Action
     {
         $id = (int) $this->_getParam('id'); 
         $productModel = new Application_Model_Product();
-        $productModel->verwijderProduct($id);
+        $productModel->verwijder($id);
         $this->_redirect($this->view->url(array('controller'=> 'Product', 'action'=> 'index')));
     }
 

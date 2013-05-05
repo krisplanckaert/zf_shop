@@ -11,25 +11,35 @@ class Application_Model_Product extends Zend_Db_Table_Abstract
         return $this->fetchAll(); // select * from nieuws                        
     }
     
-    public function toevoegenProduct($params) 
+    public function toevoegen($params) 
     {
         $this->insert($params);        
         
     }
     
-    public function wijzigenProduct($params, $id)
+    public function wijzigen($params, $id)
     {
          $where  = $this->getAdapter()->quoteInto('id= ?', $id);
          $this->update($params, $where);   
     }       
         
-    public function verwijderProduct($id)
+    public function verwijder($id)
     {
          $where  = $this->getAdapter()->quoteInto('id= ?', $id);
          $this->delete($where);   
     }    
         
-    
+    public function getOne($id,$colName = 'ID')
+    {
+    	$where  = '';
+    	$where .= $colName . ' = ' .(int)$id;
+        $row = parent::fetchRow($where);            
+        if (!$row) {
+            return FALSE; 
+        }
+        $this->data = $row->toArray();
+        return $this->data;
+    }
     
     
 }
