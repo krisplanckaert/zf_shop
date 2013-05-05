@@ -1,7 +1,8 @@
 <?php
-class Application_Model_Winkelmand extends Zend_Db_Table_Abstract
+//class Application_Model_Winkelmand extends Zend_Db_Table_Abstract
+class Application_Model_Winkelmand extends My_Model
 {
-    private $db; 
+    //private $db; 
     
     protected $_name = 'winkelmanden';
     protected $_primary = 'id';
